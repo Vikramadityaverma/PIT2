@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>My Investment Tracker</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+</head>
+<body>
+
+  <header>
+    <h1>📊 My Investment Tracker</h1>
+    <button id="toggle-dark">🌙 Toggle Dark Mode</button>
+  </header>
+
+  <main>
+
+    <section id="dashboard">
+      <h2>Dashboard</h2>
+      <div class="cards" id="net-worth">Net Worth: ₹0</div>
+      <canvas id="pieChart"></canvas>
+      <canvas id="lineChart"></canvas>
+    </section>
+
+    <section id="add-transaction">
+      <h2>Add Investment</h2>
+      <form id="investment-form">
+        <label>Type:
+          <select id="type" required>
+            <option value="">--Select--</option>
+            <option>PPF</option>
+            <option>Savings Account</option>
+            <option>Fixed Deposit</option>
+            <option>Stocks</option>
+            <option>Mutual Funds</option>
+            <option>Gold</option>
+            <option>Silver</option>
+            <option>Crypto</option>
+            <option>Real Estate</option>
+            <option>Other</option>
+          </select>
+        </label>
+        <label>Amount:
+          <input type="number" id="amount" required>
+        </label>
+        <label>Date:
+          <input type="date" id="date" required>
+        </label>
+        <label>Growth Rate (% annual):
+          <input type="number" id="growth" step="0.01" placeholder="Optional">
+        </label>
+        <button type="submit">Add Investment</button>
+      </form>
+    </section>
+
+    <section id="transactions">
+      <h2>Transactions</h2>
+      <table id="transaction-table">
+        <thead>
+          <tr>
+            <th>Type</th>
+            <th>Amount (₹)</th>
+            <th>Date</th>
+            <th>Growth Rate (%)</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <!-- Transactions appear here -->
+        </tbody>
+      </table>
+    </section>
+
+    <section id="projection">
+      <h2>5-Year Growth Projection</h2>
+      <canvas id="projectionChart"></canvas>
+    </section>
+
+    <section id="backup">
+      <h2>Backup & Restore</h2>
+      <button id="backup-btn">Backup Data</button>
+      <input type="file" id="restore-file">
+    </section>
+
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
